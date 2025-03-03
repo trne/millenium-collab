@@ -6,7 +6,7 @@ import { Footer } from '@/components/shared/footer/footer.component';
 import { Banner } from '@/components/shared/banner/banner.component';
 import { trackEvent } from '@/services/tealium/tealium.service';
 import { getBanner } from '@/services/contentful/contentful.service';
-import type { LayoutProps } from './types';
+import type { LayoutProps } from './types.ts';
 
 export const Layout: FC<LayoutProps> = () => {
   const location = useLocation();
@@ -35,7 +35,7 @@ export const Layout: FC<LayoutProps> = () => {
         />
       )}
       <Navigation />
-      <main className="flex-grow w-full px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto">
+      <main className="flex-grow w-full">
         <Outlet />
       </main>
       <Footer />

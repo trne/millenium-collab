@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import * as Icons from 'lucide-react';
 import {X} from 'lucide-react';
-import type {BannerProps} from './types';
+import type {BannerProps} from './types.ts';
 
 export function Banner({title, description, leftIcon, rightIcon}: BannerProps) {
     const [isVisible, setIsVisible] = useState(true);

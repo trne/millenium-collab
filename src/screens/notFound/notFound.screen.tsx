@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/baseUi/button/button.component';
-import type { NotFoundScreenProps } from './types';
+import type { NotFoundScreenProps } from './types.ts';
 
 export function NotFound({}: NotFoundScreenProps = {}) {
   return (

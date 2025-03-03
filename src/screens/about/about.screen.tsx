@@ -1,4 +1,4 @@
-import type { AboutScreenProps } from './types';
+import type { AboutScreenProps } from './types.ts';
 
 export function About({}: AboutScreenProps = {}) {
   return (

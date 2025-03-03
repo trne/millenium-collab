@@ -1,6 +1,6 @@
 import { createClient } from 'contentful';
-import { mapBlogPost, mapBlogPosts } from './mappers/blogPost.mapper';
-import { mapBanner } from './mappers/banner.mapper';
+import { mapBlogPost, mapBlogPosts } from './mappers/blogPost.mapper.ts';
+import { mapBanner } from './mappers/banner.mapper.ts';
 import type { BlogPost } from '@/models/blog.model';
 import type { Banner } from '@/models/banner.model';
 

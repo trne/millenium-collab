@@ -1,4 +1,4 @@
-import type { LandingScreenProps } from './types';
+import type { LandingScreenProps } from './types.ts';
 
 export function Landing({}: LandingScreenProps = {}) {
   return (
