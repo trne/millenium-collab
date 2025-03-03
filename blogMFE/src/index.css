@@ -2,28 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
-    --background: 120 3% 11%;
-    --foreground: 0 0% 100%;
+    /* These variables are kept for compatibility with existing code */
+    /* but the actual colors are defined in tailwind.config.js */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 20%;
+    
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
-    --primary: 120 100% 25%;
+    
+    --primary: 149 100% 30%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 98%;
-    --secondary-foreground: 120 3% 11%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 84 100% 40%;
-    --accent-foreground: 0 0% 100%;
+    
+    --secondary: 52 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 52 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 215 20.2% 65.1%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 149 100% 30%;
+    
     --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 149 100% 30%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 52 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: 52 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 149 100% 30%;
   }
 }
 
@@ -32,9 +74,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground min-h-screen;
-    font-family: Inter, system-ui, -apple-system, sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
   }
 }

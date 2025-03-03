@@ -5,18 +5,26 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 5001",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && cp _headers dist/",
     "lint": "eslint .",
     "preview": "tsc && vite build && vite preview --port 5001",
     "test": "vitest"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@tanstack/react-query": "^5.67.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "contentful": "^11.5.3",
+    "lucide-react": "^0.477.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.2.1"
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^7.2.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

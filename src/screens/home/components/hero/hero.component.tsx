@@ -42,14 +42,7 @@ export const Hero: FC<HeroProps> = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden md:block relative">
-              <div className="absolute inset-0 bg-black/10 rounded-lg"></div>
-              <img
-                src="https://images.unsplash.com/photo-1599012307530-1aed1810f2c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJvYWRzaWRlJTIwYXNzaXN0YW5jZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
-                alt="Green Flag Roadside Assistance"
-                className="rounded-lg shadow-xl w-full h-auto object-cover"
-              />
-            </div>
+            <div className="hidden md:block relative"/>
           </div>
         </div>
       </div>

@@ -4,6 +4,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getBlogPost } from '@/services/contentful/contentful.service';
 import { Loader2, ArrowLeft } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 export const BlogPostScreen = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -42,7 +45,7 @@ export const BlogPostScreen = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto bg-darkgreen">
       <button 
         onClick={() => navigate('/')}
         className="mb-8 flex items-center gap-2 text-blue-600 hover:underline"
@@ -59,6 +62,8 @@ export const BlogPostScreen = () => {
         />
       </div>
       
+      <h1 className="text-4xl font-bold mb-6 text-white">{post.title}</h1>
+
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
         <span>{post.author}</span>
         <span>•</span>
@@ -71,13 +76,22 @@ export const BlogPostScreen = () => {
         </time>
       </div>
       
-      <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
-      <p className="text-xl text-gray-700 mb-8">{post.description}</p>
+      <div className="text-xl mb-8 prose prose-lg prose-invert">
+        <ReactMarkdown 
+          remarkPlugins={[remarkGfm]} 
+          rehypePlugins={[rehypeRaw]}
+        >
+          {post.description}
+        </ReactMarkdown>
+      </div>
       
-      <div className="prose prose-lg max-w-none">
-        {post.content.split('\n').map((paragraph, idx) => (
-          <p key={idx} className="mb-4">{paragraph}</p>
-        ))}
+      <div className="prose prose-lg prose-invert max-w-none pb-8">
+        <ReactMarkdown 
+          remarkPlugins={[remarkGfm]} 
+          rehypePlugins={[rehypeRaw]}
+        >
+          {post.content}
+        </ReactMarkdown>
       </div>
     </div>
   );
